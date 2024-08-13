@@ -12,10 +12,11 @@ class CreateShippingDataProvider(
     private val shippingRepository: ShippingRepository,
 ) : CreateShippingGateway {
     override fun create(input: CreateShippingGateway.Input): Shipping {
-        val (name) = input
+        val (uuid, name) = input
 
         val shippingEntity =
             ShippingEntity(
+                uuid = uuid,
                 name = name,
             )
 
@@ -23,6 +24,7 @@ class CreateShippingDataProvider(
 
         return Shipping(
             id = savedShippingEntity.id!!,
+            uuid = savedShippingEntity.uuid,
             name = savedShippingEntity.name,
             state = ShippingState.valueOf(savedShippingEntity.state.name),
         )

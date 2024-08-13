@@ -17,6 +17,6 @@ class UpdateShippingInvoiceUseCase(
     ) {
         val shipping = this.findShippingByIdGateway.find(shippingId) ?: throw RuntimeException("Shipping not found")
 
-        this.updateShippingInvoiceGateway.update(shipping.id, invoice)
+        this.updateShippingInvoiceGateway.update(shipping.uuid, invoice)
     }
 }

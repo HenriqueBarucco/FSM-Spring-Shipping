@@ -9,3 +9,16 @@ spring:
   h2:
     console:
       enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: /
+    username: guest
+    password: guest
+
+rabbitmq:
+  queues:
+    shipping:
+      queue: shipping-queue
+      exchange: fsm
+      routing-key: shipping-queue

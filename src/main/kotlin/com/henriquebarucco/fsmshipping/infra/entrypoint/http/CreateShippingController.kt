@@ -18,11 +18,18 @@ class CreateShippingController(
     fun createShipping(
         @RequestBody request: CreateShippingRequest,
     ): ResponseEntity<CreateShippingResponse> {
-        val shipping = this.createShippingInteractor.execute(CreateShippingInteractor.Input(request.name))
+        val shipping =
+            this.createShippingInteractor.execute(
+                CreateShippingInteractor.Input(
+                    uuid = request.uuid,
+                    name = request.name,
+                ),
+            )
 
         val response =
             CreateShippingResponse(
                 id = shipping.id,
+                uuid = shipping.uuid,
                 name = shipping.name,
                 state = shipping.state.name,
             )

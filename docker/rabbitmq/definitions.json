@@ -1,0 +1,88 @@
+{
+  "bindings":[
+    {
+      "arguments":{
+
+      },
+      "destination":"shipping-queue",
+      "destination_type":"queue",
+      "routing_key":"shipping-queue",
+      "source":"fsm",
+      "vhost":"/"
+    }
+  ],
+  "exchanges":[
+    {
+      "arguments":{
+
+      },
+      "auto_delete":false,
+      "durable":true,
+      "name":"fsm",
+      "type":"direct",
+      "vhost":"/"
+    }
+  ],
+  "global_parameters":[
+
+  ],
+  "parameters":[
+
+  ],
+  "permissions":[
+    {
+      "configure":".*",
+      "read":".*",
+      "user":"guest",
+      "vhost":"/",
+      "write":".*"
+    }
+  ],
+  "policies":[
+
+  ],
+  "queues":[
+    {
+      "arguments":{
+
+      },
+      "auto_delete":false,
+      "durable":true,
+      "name":"shipping-queue",
+      "type":"classic",
+      "vhost":"/"
+    }
+  ],
+  "rabbit_version":"3.12.12",
+  "rabbitmq_version":"3.12.12",
+  "topic_permissions":[
+
+  ],
+  "users":[
+    {
+      "hashing_algorithm":"rabbit_password_hashing_sha256",
+      "limits":{
+
+      },
+      "name":"guest",
+      "password_hash":"2kbfR/MIgxT/VAcDc1G26GtDGP9m3WqlxJW2mMMzs3RLm0os",
+      "tags":[
+        "administrator"
+      ]
+    }
+  ],
+  "vhosts":[
+    {
+      "limits":[
+
+      ],
+      "metadata":{
+        "description":"Default virtual host",
+        "tags":[
+
+        ]
+      },
+      "name":"/"
+    }
+  ]
+}

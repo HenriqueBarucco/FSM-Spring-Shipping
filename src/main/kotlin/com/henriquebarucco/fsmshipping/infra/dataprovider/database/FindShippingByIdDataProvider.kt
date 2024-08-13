@@ -16,6 +16,7 @@ class FindShippingByIdDataProvider(
 
         return Shipping(
             id = shippingEntity.id!!,
+            uuid = shippingEntity.uuid,
             name = shippingEntity.name,
             state = ShippingState.valueOf(shippingEntity.state.name),
         )

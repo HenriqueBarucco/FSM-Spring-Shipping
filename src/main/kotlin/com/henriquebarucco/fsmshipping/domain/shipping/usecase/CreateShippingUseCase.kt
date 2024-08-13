@@ -10,8 +10,8 @@ class CreateShippingUseCase(
     private val createShippingGateway: CreateShippingGateway,
 ) : CreateShippingInteractor {
     override fun execute(input: CreateShippingInteractor.Input): Shipping {
-        val (name) = input
+        val (uuid, name) = input
 
-        return this.createShippingGateway.create(CreateShippingGateway.Input(name))
+        return this.createShippingGateway.create(CreateShippingGateway.Input(uuid, name))
     }
 }

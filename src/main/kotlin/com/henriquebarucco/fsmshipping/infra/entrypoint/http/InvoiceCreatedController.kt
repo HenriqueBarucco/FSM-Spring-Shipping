@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import reactor.core.publisher.Mono
+import java.util.UUID
 
 @RestController
 @RequestMapping("/v1/shippings")
@@ -20,7 +21,7 @@ class InvoiceCreatedController(
 ) {
     @PostMapping("/{id}/invoice")
     fun createdInvoice(
-        @PathVariable id: String,
+        @PathVariable id: UUID,
         @RequestBody request: InvoiceCreatedRequest,
     ): ResponseEntity<Void> {
         println("Invoice created for shipping $id")

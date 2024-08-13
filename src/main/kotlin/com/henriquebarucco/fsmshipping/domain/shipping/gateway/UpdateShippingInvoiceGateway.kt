@@ -4,7 +4,7 @@ import java.util.UUID
 
 interface UpdateShippingInvoiceGateway {
     fun update(
-        shippingId: UUID,
+        shippingUuid: UUID,
         invoice: UUID,
     )
 }

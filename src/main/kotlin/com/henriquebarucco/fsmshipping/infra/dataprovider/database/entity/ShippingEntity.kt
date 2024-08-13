@@ -12,8 +12,9 @@ import java.util.UUID
 @Entity
 @Table(name = "shippings")
 data class ShippingEntity(
-    @Id @GeneratedValue(strategy = GenerationType.UUID)
-    val id: UUID? = null,
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    val id: Int? = null,
+    val uuid: UUID,
     var name: String,
     @Enumerated(EnumType.STRING)
     var state: ShippingState = ShippingState.CREATED,

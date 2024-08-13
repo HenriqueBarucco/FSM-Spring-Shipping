@@ -11,10 +11,10 @@ class UpdateShippingInvoiceDataProvider(
     private val shippingRepository: ShippingRepository,
 ) : UpdateShippingInvoiceGateway {
     override fun update(
-        shippingId: UUID,
+        shippingUuid: UUID,
         invoice: UUID,
     ) {
-        val shippingEntity = this.shippingRepository.findById(shippingId).orElse(null) ?: throw RuntimeException("Shipping not found")
+        val shippingEntity = this.shippingRepository.findByUuid(shippingUuid).orElse(null) ?: throw RuntimeException("Shipping not found")
 
         shippingEntity.invoice = invoice
         shippingEntity.state = ShippingState.INVOICE_CREATED
